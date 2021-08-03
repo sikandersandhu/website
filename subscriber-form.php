@@ -1,59 +1,76 @@
-<!-- Accessing the form submission data in the PHP script -->
 <?php
-  $first_name = $_POST['input-first-name'];
-  $last_name = $_POST['input-last-name'];
-  $visitor_email = $_POST['input-email'];
-  $visitor_phone = $_POST['input-phone'];
-?>
-<!-- Composing the email message-->
-<?php
-  $email_from = 'info.artworksmagic@gmail.com';
-  $email_subject = "New Subscription";
-  $email_body = "You have received a new subscription from the user $first-name.\n".
-                "Here are the detail:"
-                "Name: $first_name $last_name"
-                "Email: $visitor_email"
-                "Phone: $visitor_phone"
-?>
-<!-- Sending the message -->
-<?php
-  $to = "sikandersandhu82@gmail.com, sigalit.somech@gmail.com";
+/*
+ *  CONFIGURE EVERYTHING HERE
+ */
 
-  $headers = "From: $email_from \r\n";
+// an email address that will be in the From field of the email.
+$from = 'info.artworksmagic@gmail.com';
 
-  $headers .= "Reply-To: $visitor_email \r\n";
+// an email address that will receive the email with the output of the form
+$sendTo = 'sigalit.somech@gmail.com, sikandersandhu82@gmail.com';
 
-  mail($to,$first-name,$last_name,$visitor_email,$visitor_phone,$headers);
- ?>
-<!-- Securing the form against email injection by spammers -->
-<?php
-function IsInjected($str)
+// subject of the email
+$subject = 'New subscription';
+
+// form field names and their translations.
+// array variable name => Text to appear in the email
+$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email'); 
+
+// message that will be displayed when everything is OK :)
+$okMessage = 'Successful. Thank you for your subscription';
+
+// If something goes wrong, we will display this message.
+$errorMessage = 'There was an error while submitting the form. Please try again later';
+
+/*
+ *  LET'S DO THE SENDING
+ */
+
+// if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
+error_reporting(E_ALL & ~E_NOTICE);
+
+try
 {
-    $injections = array('(\n+)',
-           '(\r+)',
-           '(\t+)',
-           '(%0A+)',
-           '(%0D+)',
-           '(%08+)',
-           '(%09+)'
-           );
-               
-    $inject = join('|', $injections);
-    $inject = "/$inject/i";
+
+    if(count($_POST) == 0) throw new \Exception('Form is empty');
+            
+    $emailText = "You have a new subscription from\n=============================\n";
+
+    foreach ($_POST as $key => $value) {
+        // If the field exists in the $fields array, include it in the email 
+        if (isset($fields[$key])) {
+            $emailText .= "$fields[$key]: $value\n";
+        }
+    }
+
+    // All the necessary headers for the email.
+    $headers = array('Content-Type: text/plain; charset="UTF-8";',
+        'From: ' . $from,
+        'Reply-To: ' . $_POST['email'],
+        'Return-Path: ' . $from,
+    );
     
-    if(preg_match($inject,$str))
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
+    // Send email
+    mail($sendTo, $subject, $emailText, implode("\n", $headers));
+
+    $responseArray = array('type' => 'success', 'message' => $okMessage);
+}
+catch (\Exception $e)
+{
+    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
 }
 
-if(IsInjected($visitor_email))
-{
-    echo "Bad email value!";
-    exit;
+
+// if requested by AJAX request return JSON response
+if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    $encoded = json_encode($responseArray);
+
+    header('Content-Type: application/json');
+
+    echo $encoded;
+}
+// else just display the message
+else {
+    echo $responseArray['message'];
 }
 ?>

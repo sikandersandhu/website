@@ -46,9 +46,7 @@ body {
     border: 4px solid #facc4fc4;
 }
 
-                                                        /* Main content */
-
-/* 1st block | call us button */
+/* call us button */
 .call-btn-top {
     background-color: #facc4fc4;
 }
@@ -58,7 +56,9 @@ body {
     padding: .75rem;
 }
 
-/* 2nd block | corousel */
+                                                     /* Main section */
+
+/* 1st block | corousel */
 .carousel {
     background-color: #facc4fc4;
 }
@@ -70,7 +70,7 @@ body {
     font-size: clamp(0.3rem, 1rem + 2vw, 2rem);
 }
 
-/* 3rd block | quote */
+/* 2nd block | quote */
 .quote {
     background-color: #facc4f98;
     height: 30rem;
@@ -82,6 +82,31 @@ body {
 }
 .quote blockquote {
     font-size: clamp(0.2em, 1em + 2vw, 1.25em);
+}
+
+/* 3rd block | intro */
+div.intro {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(245, 245, 245, 0.556);
+}
+.intro-text {
+    max-width: 80rem;
+    justify-self: center;
+    text-align: center;
+
+    background-color: rgba(245, 245, 245, 0.556);
+
+    padding: 3rem;
+}
+.programs-intro {
+    padding-top: 3rem;
+    margin-bottom: -2.5rem;;
+}
+.intro > p {
+    font-size: 1rem;
+    font-size: clamp(0.8em, 1em + 0vw, 1.25em);
+    padding: 0.5rem
 }
 
 
@@ -195,7 +220,7 @@ img {
     justify-self: center;
     align-self: center;
 
-    padding-left: 0.8rem;;
+    padding-left: 0.8rem;
 }
 .tag-text > p {
     font-size: 1.15rem;
@@ -205,7 +230,6 @@ img {
     padding-top: 1rem;
 
     margin-bottom: 1rem;
-
 }
 p.name {
     color: whitesmoke;
@@ -218,6 +242,7 @@ p.name {
     grid-column: 2 / span 7;
     max-width: 80rem;
     justify-self: center;
+    text-align: center;
 
     background-color: rgba(245, 245, 245, 0.556);
 
@@ -303,7 +328,7 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
     #programs .row {
         padding-right: 1rem;
         padding-left: 1rem;
-        padding-bottom: 3rem;
+        padding-bottom: 4rem;
     }
 
     /* 4th block | about me */
@@ -311,17 +336,46 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
         display: grid;
 
         grid-template-columns: 0px repeat(2, 1fr) repeat(3, 115px) repeat(2, 1fr) 0px;
-        grid-template-rows: repeat(3, 50px) repeat(5, minmax(75px, auto)) 75px;        
-        background-color:cornsilk;
+        grid-template-rows: repeat(3, 60px) repeat(5, minmax(75px, auto)) 75px;        
+        /* background-color:cornsilk; */
     }
-
     .tag {
+        grid-row: 2 / span 3;
+        grid-column: 4 / span 3; 
+    
+        background-color: #962f7e96;
+    
         margin-left: 0.5rem;
         margin-right: 0.5rem;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        border-radius: 1.25rem;
+    
+        z-index:4;
     }
-
+    .tag-text {
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 3;
+    
+        justify-self: center;
+        align-self: center;
+    
+        padding-left: 0.8rem;
+        padding-top: 3rem;
+    }
     .text {
+        grid-row: 4 / span 5;
+        grid-column: 2 / span 7;
+        max-width: 80rem;
+        justify-self: center;
+    
+        background-color: rgba(245, 245, 245, 0.556);
+
+        padding-top: 8.2rem;
+        padding-right: 2rem;
+        padding-bottom: 1.5rem;
         padding-left: 2.2rem;
+        border-radius: 1rem;
     }
 
     /* footer | subscribe form */
@@ -349,6 +403,32 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
     #programs .row {
         padding-right: 5rem;
         padding-left: 5rem;
+    }
+
+    /* 4th block | About me */
+    .tag {
+        grid-row: 2 / span 3;
+        grid-column: 4 / span 3; 
+    
+        background-color: #962f7e96;
+    
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        margin-top: 2rem;
+        padding: 0.5rem;
+        border-radius: 1.25rem;
+    
+        z-index:4;
+    }
+    .tag-text {
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 3;
+    
+        justify-self: center;
+        align-self: center;
+    
+        padding-left: 0.8rem;
+        padding-top: 4rem;
     }
 
     /* footer | subscribe form */

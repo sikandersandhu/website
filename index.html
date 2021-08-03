@@ -110,7 +110,24 @@
             <blockquote cite='Christopher Moore'> <br />-- Christopher Moore --</blockquote>
         </div>
 
-        <!-- 3rd block | Programs cards -->
+        <!-- 3rd block | intro -->
+        <div class='intro'>
+            <div class='intro-text'>
+                <p>We believe that mediums such as arts, crafts and movement are powerful tools to direct our
+                    attention to the present moment and promote a happy state, where learning takes place through
+                    exploration
+                    and fun.
+                </p>
+                <p>This is the guiding principle at the heart of our programs. </p>
+                <p>Together with our participants, we aim to create a unique multi-sensory learning experience that
+                    sparks their imagination, sense of creativity, and supports and empowers them in their unique
+                    developmental journey.</p>
+                <p class='programs-intro'><strong>Below are some of our ongoing programs and sessions:</strong></p>
+            </div>
+        </div>
+
+
+        <!-- 4th block | Programs cards -->
         <div class='container-fluid programs' id='programs' alt=''>
             <div class='row text-black-50' id='program-tiles'>
 
@@ -528,7 +545,7 @@
             </div>
         </div>
 
-        <!--  4th block of content | About me section-->
+        <!--  5th block of content | About me section-->
         <div class='about-me' id='about-me'>
             <div class='background-1'></div>
             <div class='background-2'></div>
@@ -577,7 +594,7 @@
 
     <!-- Subscription form -->
     <div class=' subscribe-block container-fluid p-5' id='subscribe'>
-        <form action='subscriber-form.php' method='post' class='subscribe-form'>
+        <form action='subscriber-form.php' method='post' class='subscribe-form' role='form' id='subscriber-form'>
             <div>
                 <label class='form-label form-title'>Subscribe</label>
                 <div class='form-label'>Please sign up to stay in touch with us and hear about our latest programs and
@@ -586,23 +603,24 @@
             <div class="row">
                 <div class="col">
                     <label class="sr-only" for="input-first-name"></label>
-                    <input type="text" class="form-control" id='input-first-name' placeholder="First name"
-                        name='first-name' data-error='First name is required' required>
+                    <input type="text" id='form-name' name='name' class="form-control" placeholder="First name"
+                        data-error='First name is required' required>
                 </div>
                 <div class="col">
                     <label class="sr-only" for="input-last-name"></label>
-                    <input type="text" class="form-control" id='input-last-name' placeholder="Last name"
-                        name='last-name' aria-describedby="email" required>
+                    <input type="text" id='form-surname' name='surname' class="form-control" placeholder="Last name"
+                        aria-describedby="email" required>
                 </div>
             </div>
             <div>
                 <label for="input-email" class="sr-only"></label>
-                <input type="email" class="form-control" id="input-email" placeholder='Email address' required>
+                <input type="email" id="form-email" name='email' class="form-control" placeholder='Email address'
+                    required>
             </div>
             <div>
                 <label for="input-phone" class="sr-only"></label>
-                <input type="numeric" class="form-control" id="input-phone" placeholder='Phone' aria-describedby="phone"
-                    min='8' max='10'>
+                <input type="numeric" id="form-phone" name='phone' class="form-control" placeholder='Phone'
+                    aria-describedby="phone" min='8' max='10'>
                 <div id="phone" style='margin-left: 0.2rem' class="form-text"> We'll never share your Email and phone
                     number with
                     anyone else.
