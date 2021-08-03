@@ -99,7 +99,7 @@ body {
     background-color: #a5873400;
 
     padding-top: 6rem;
-    padding-bottom: 9rem;
+    padding-bottom: 6rem;
 }
 .card {
     background-color: #fffaed;
@@ -303,6 +303,7 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
     #programs .row {
         padding-right: 1rem;
         padding-left: 1rem;
+        padding-bottom: 3rem;
     }
 
     /* 4th block | about me */
@@ -310,7 +311,7 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
         display: grid;
 
         grid-template-columns: 0px repeat(2, 1fr) repeat(3, 115px) repeat(2, 1fr) 0px;
-        grid-template-rows: repeat(3, 75px) repeat(5, minmax(75px, auto)) 75px;        
+        grid-template-rows: repeat(3, 50px) repeat(5, minmax(75px, auto)) 75px;        
         background-color:cornsilk;
     }
 
