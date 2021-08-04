@@ -116,6 +116,10 @@ div.intro {
     justify-content: center;
     background-color: #a5873459;
 }
+.programs a {
+    padding: 1rem;
+    text-align: left;
+}
 .programs .row {
     display: flex;
     justify-content: center;
@@ -259,7 +263,9 @@ p.name {
     padding: 0.5rem
 }
 
-/* footer 1| Subscribe*/
+                                                    /* Footer */
+
+/* footer 1st block| Subscribe form*/
 .subscribe-block {
     display: grid;
 
@@ -269,8 +275,8 @@ p.name {
     grid-column: 2 / span 7;
 }
 .form-label.form-title {
-font-weight: 400;
-font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
+font-weight: 200;
+font-size: clamp(0.8em, 1.50rem + 1vw, 2.50em);
 }
 .form-label {
     font-size: clamp(0.8em, 1rem + 0vw, 1.25em);
@@ -281,21 +287,50 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
 .footer {  
     display: flex;
     justify-content: center; 
-    background-color: #9da09f;
+    background-color: #9da09f73;
 }
 .footer .row {
     max-width: 100rem;
 }
 .footer p.title {
+    text-align: center;
     color: #383838;
-    font-weight: 400;
-    font-size: clamp(0.8em, 1rem + 1vw, 2.50em);
+    font-weight: 200;
+    font-size: clamp(0.8em, 1.50rem + 1vw, 2.50em);
+}
+.contact-us li {
+    list-style-type: none;
+    margin-left: -2rem;
+}
+.quick-links li {
+    list-style-type: none;
+    margin-left: -2rem;
 }
 
 .footer a {
-    margin-left: -1rem;
+    text-align: center;
+    padding: 1rem;
     color: #f2f2f2;
     font-size: clamp(0.8em, 1rem + 0.3vw, 1.25em);
+}
+
+/* footer 3rd block | contact form */
+.contact-block {
+    display: grid;
+
+    grid-template-columns: repeat(9, 1fr);
+
+    background-color: #9da09fbf;
+}
+.contact-form {
+    grid-column: 2 / span 7;
+}
+.form-label.form-title {
+font-weight: 200;
+font-size: clamp(0.8em, 1.50rem + 1vw, 2.50em);
+}
+.form-label {
+    font-size: clamp(0.8em, 1rem + 0vw, 1.25em);
 }
 
 .footer p.follow-copyright {
@@ -305,6 +340,10 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
 }
 .footer-2 {
     white-space: nowrap;
+}
+
+button.btn {
+    margin-top: 1rem;
 }
 
 
@@ -383,6 +422,9 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
         grid-column: 1 / span 8;
     }
 
+    .contact-form {
+        grid-column: 1 / span 8;
+    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -436,6 +478,10 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
         grid-column: 1 / span 8;
         padding-left: 2rem;
     }
+    .contact-form {
+        grid-column: 1 / span 8;
+        padding-left: 2rem;
+    }
 
 }
 
@@ -470,6 +516,10 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
         grid-column: 1 / span 8;
         padding-left: 4rem;
     }
+    .contact-form {
+        grid-column: 1 / span 8;
+        padding-left: 4rem;
+    }
 }
 
 /* // Large devices (desktops, 992px and up) */
@@ -493,6 +543,10 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
 
     /* footer | subscribe form */
     .subscribe-form {
+        grid-column: 1 / span 8;
+        padding-left: 6rem;
+    }
+    .contact-form {
         grid-column: 1 / span 8;
         padding-left: 6rem;
     }
@@ -528,6 +582,10 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
         grid-column: 1 / span 8;
         padding-left: 8rem;
     }
+    .contact-form {
+        grid-column: 1 / span 8;
+        padding-left: 8rem;
+    }
 }
 
 
@@ -552,6 +610,9 @@ font-size: clamp(0.8em, 1.75rem + 1vw, 2.50em);
         padding-left: 10rem;
     }
     .subscribe-block {
+        max-width: 100rem;
+    }
+    .contact-block {
         max-width: 100rem;
     }
 }
