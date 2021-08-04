@@ -287,7 +287,7 @@ font-size: clamp(0.8em, 1.50rem + 1vw, 2.50em);
 .footer {  
     display: flex;
     justify-content: center; 
-    background-color: #9da09f73;
+    background-color: #9da09f;
 }
 .footer .row {
     max-width: 100rem;
@@ -320,7 +320,7 @@ font-size: clamp(0.8em, 1.50rem + 1vw, 2.50em);
 
     grid-template-columns: repeat(9, 1fr);
 
-    background-color: #9da09fbf;
+    background-color: #9da09f00;
 }
 .contact-form {
     grid-column: 2 / span 7;
